@@ -49,8 +49,8 @@ logoImg.src = siteContent.images['logo-img']
 const ctaImg = document.querySelector('#cta-img')
 ctaImg.src = siteContent.images['cta-img']
  
-const midImg = document.querySelector('#middle-img')
-midImg.src = siteContent.images['middle-img']
+const middleImg = document.querySelector('#middle-img')
+middleImg.src = siteContent.images['accent-img']
  
  
 //Footer Link
@@ -59,22 +59,22 @@ footerLink.textContent = siteContent.footer.copyright
 footerLink.classList.add('bold')
  
 //Contact-possible issues?
-/*
-const contact = document.querySelector('section,contact')
+
+const contact = document.querySelector('section.contact')
 //contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
 contact.children[0].textContent = siteContent.contact['contact-h4']
 contact.children[1].textContent = siteContent.contact['address']
 //contact.querySelector('p:nth-of-type(2)').textContent = siteContent.contact['phone']
 contact.children[2].textContent = siteContent.contact['phone']
 contact.children[3].textContent = siteContent.contact['email']
-*/
+
  
 //TopContent
 const topContent = document.querySelector('.top-content')
 topContent.children[0].children[0].textContent = siteContent['main-content']['features-h4']
 topContent.children[0].children[1].textContent = siteContent['main-content']['features-content']
-topContent.children[1].children[0].textContent = siteContent['main-content']['features-h4']
-topContent.children[1].children[1].textContent = siteContent['main-content']['features-content']
+topContent.children[1].children[0].textContent = siteContent['main-content']['about-h4']
+topContent.children[1].children[1].textContent = siteContent['main-content']['about-content']
  
 //Botomcontentn
 const bottomContent = document.querySelector('.bottom-content')
@@ -84,8 +84,8 @@ h4sBottom[1].textContent = siteContent['main-content']['product-h4']
 h4sBottom[2].textContent = siteContent['main-content']['vision-h4']
 const psBottom = bottomContent.querySelectorAll('p')
 psBottom[0].textContent = siteContent['main-content']['services-content']
-psBottom[1].textContent = siteContent['main-content']['services-content']
-psBottom[2].textContent = siteContent['main-content']['services-content']
+psBottom[1].textContent = siteContent['main-content']['product-content']
+psBottom[2].textContent = siteContent['main-content']['vision-content']
 
 //CTA
 document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1
@@ -97,5 +97,8 @@ const navLinks = document.querySelectorAll('header nav a')
 const navLinkTexts = Object.values(siteContent.nav)
 navLinks.forEach((link, idx)=>{
 link.textContent = navLinkTexts[idx]
+link.classList.add('italic')
 })
-
+for (let link of document.querySelectorAll('header nav a')) {
+  console.log(link)
+}
