@@ -59,10 +59,13 @@ footerLink.textContent = siteContent.footer.copyright
 footerLink.classList.add('bold')
  
 //Contact-possible issues?
-/*const contact = document.querySelector('section,contact')
-contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+/*
+const contact = document.querySelector('section,contact')
+//contact.querySelector('h4').textContent = siteContent.contact['contact-h4']
+contact.children[0].textContent = siteContent.contact['contact-h4']
 contact.children[1].textContent = siteContent.contact['address']
-contact.querySelector('p:nth-of-type(2)').textContent = siteContent.contact['phone']
+//contact.querySelector('p:nth-of-type(2)').textContent = siteContent.contact['phone']
+contact.children[2].textContent = siteContent.contact['phone']
 contact.children[3].textContent = siteContent.contact['email']
 */
  
@@ -73,6 +76,26 @@ topContent.children[0].children[1].textContent = siteContent['main-content']['fe
 topContent.children[1].children[0].textContent = siteContent['main-content']['features-h4']
 topContent.children[1].children[1].textContent = siteContent['main-content']['features-content']
  
-//Botomcontent
+//Botomcontentn
 const bottomContent = document.querySelector('.bottom-content')
+const h4sBottom = bottomContent.querySelectorAll('h4')
+h4sBottom[0].textContent = siteContent['main-content']['services-h4']
+h4sBottom[1].textContent = siteContent['main-content']['product-h4']
+h4sBottom[2].textContent = siteContent['main-content']['vision-h4']
+const psBottom = bottomContent.querySelectorAll('p')
+psBottom[0].textContent = siteContent['main-content']['services-content']
+psBottom[1].textContent = siteContent['main-content']['services-content']
+psBottom[2].textContent = siteContent['main-content']['services-content']
+
+//CTA
+document.querySelector('.cta .cta-text h1').textContent = siteContent.cta.h1
+document.querySelector('.cta .cta-text button').textContent = siteContent.cta.button
+
+//NavAnchorTags
+
+const navLinks = document.querySelectorAll('header nav a')
+const navLinkTexts = Object.values(siteContent.nav)
+navLinks.forEach((link, idx)=>{
+link.textContent = navLinkTexts[idx]
+})
 
